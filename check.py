@@ -17,6 +17,9 @@ import gc
 from getpass import getpass
 
 
+API_URL = 'https://api.pwnedpasswords.com/range/{}'
+
+
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('password', nargs='?',
@@ -39,8 +42,8 @@ def main():
     pwhash = None
     gc.collect()
 
-    url = 'https://api.pwnedpasswords.com/range/'
-    req = urllib.request.Request(url + prefix, 
+    # User-Agent is specified to work around restrictions on Python
+    req = urllib.request.Request(API_URL.format(prefix),
                                  headers={'User-Agent': 'Mozilla/5.0'})
     hashes = urllib.request.urlopen(req).read().splitlines()
 
