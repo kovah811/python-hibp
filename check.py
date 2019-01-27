@@ -9,12 +9,13 @@ an explanation of the k-Anonymity approach this utility is leveraging.
 
 """
 
-import urllib.request
-import urllib.parse
-from hashlib import sha1
 import argparse
 import gc
+import urllib.request
+import urllib.parse
+
 from getpass import getpass
+from hashlib import sha1
 
 
 API_URL = 'https://api.pwnedpasswords.com/range/{}'
