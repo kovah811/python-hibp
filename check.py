@@ -24,8 +24,9 @@ API_URL = 'https://api.pwnedpasswords.com/range/{}'
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument('password', nargs='?',
-            help='(Optional) The password to be checked. If not specified, '
-                 'password can be provided interactively')
+                        help='(Optional) The password to be checked. If not '
+                             'specified, password can be provided '
+                             'interactively')
     args = parser.parse_args()
 
     if args.password:
